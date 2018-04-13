@@ -1,5 +1,6 @@
+
 function currentDate(){
-  var date = Date.now();
+  var date = new Date();
   postMessage(date.toString());
   setTimeout("timedCount()", 1000);
 }

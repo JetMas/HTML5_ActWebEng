@@ -21,16 +21,32 @@
 
 <body>
   <div id="time">
+    <div id="regWorker"></div>
+    <br>
+    Inline Worker
+    <div id="inlineWorker"></div>
   </div>
   <script>
     if(typeof(Worker) !== "undefined"){
       var w = new Worker("js/date.js");
       w.onmessage = function(event) {
-        document.getElementById("time").innerHTML = event.data;
+        document.getElementById("regWorker").innerHTML = event.data;
       }
+
+      var blob = new Blob([
+        "onmessage = function(e){postMessage(Date().toString());}"
+      ]);
+
+      var blobURL = window.URL.createObjectURL(blob);
+      var w2 = new Worker(blobURL);
+      w2.onmessage = function(event) {
+        document.getElementById("inlineWorker").innerHTML = event.data;
+      }
+      w2.postMessage('');
+
     }
     else {
-      document.getElementById("time").innerHTML = "Sorry, your browser does not support Web Workers."
+      document.getElementById("regWorker").innerHTML = "Sorry, your browser does not support Web Workers."
     }
   </script>
 

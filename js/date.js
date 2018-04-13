@@ -2,7 +2,7 @@
 function currentDate(){
   var date = new Date();
   postMessage(date.toString());
-  setTimeout("timedCount()", 1000);
+  setTimeout("currentDate()", 1000);
 }
 
 currentDate();

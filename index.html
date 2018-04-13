@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    input[type="email"]:valid{
+        outline: 2px solid green;
+    }
+    input[type="email"]:invalid{
+        outline: 2px solid red;
+    }
+    input[type="text"]:valid{
+        outline: 2px solid green;
+    }
+    input[type="text"]:invalid{
+        outline: 2px solid red;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="video">
+    <video width="320" height="260" controls>
+      <source src="videos/koiFish.mp4" type="video/mp4">
+      Your browser does not support the HTML5 Video Element.
+    </video>
+  </div>
+  <br>
+
+  <div id="audio">
+    <audio controls>
+      <source src="audios/audioClip1.wav" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <br>
+
+
+  <div id="requiredField">
+    <label>
+      First Name: <input type="text" name="firstName" required>
+    </label>
+    <label>
+      Last Name: <input type="text" name="lastName" required>
+    </label>
+    <label>
+      Email: <input type="email" name="email" required>
+    </label>
+  </div>
+  <br>
+
+  <div id="editable">
+    <section contenteditable="true">
+      <h3>This section is editable</h3>
+      <p>Thesd asdkb asoas sfn asfne elic alsjr nd.</p>
+    </sectiom>
+  </div>
+  <br>
+
+</body>
+
+</html>

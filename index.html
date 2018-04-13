@@ -20,6 +20,20 @@
 </head>
 
 <body>
+  <div id="time">
+  </div>
+  <script>
+    if(typeof(Worker) !== "undefined"){
+      var w = new Worker("js/date.js");
+      w.onmessage = function(event) {
+        document.getElementById("time").innerHTML = event.data;
+      }
+    }
+    else {
+      document.getElementById("time").innerHTML = "Sorry, your browser does not support Web Workers."
+    }
+  </script>
+
   <div id="video">
     <video width="320" height="260" controls>
       <source src="videos/koiFish.mp4" type="video/mp4">

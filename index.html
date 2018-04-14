@@ -16,7 +16,19 @@
     input[type="text"]:invalid{
         outline: 2px solid red;
     }
+    input[type="tel"]:valid{
+        outline: 2px solid green;
+    }
+    input[type="tel"]:invalid{
+        outline: 2px solid red;
+    }
   </style>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
+  <script src="js/saveLocally.js"></script>
 </head>
 
 <body>
@@ -90,9 +102,6 @@
     <label>
       Last Name: <input type="text" name="lastName" required>
     </label>
-    <label>
-      Email: <input type="email" name="email" required>
-    </label>
   </div>
   <br>
 
@@ -104,6 +113,36 @@
   </div>
   <br>
 
+  <div id=formStatus></div>
+  <table id="form">
+    <tr>
+      <td>First Name: </td>
+      <td><input type="text" id="fname" required><td>
+    </tr>
+    <tr>
+      <td>Last Name: </td>
+      <td><input type="text" id="lname" required><td>
+    </tr>
+    <tr>
+      <td>Email: </td>
+      <td><input type="email" id="email" required></td>
+    </tr>
+      <td>Phone Number: </td>
+      <td><input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}" id="phoneNumber" required></td>
+    <!--<tr>
+      <td>Street Address: </td>
+      <td><input type="text" id="streetAddress" required></td>
+    </tr>
+      <td>State: </td>
+      <td><input type="text" id="state" required></td>
+    <tr>
+      <td>Postal Code: </td>
+      <td><input type="text" id="postalCode" required></td>
+    </tr>-->
+    <tr>
+      <td><button onclick="saveData()">Submit</button></td>
+    </tr>
+  </table>
 </body>
 
 </html>
